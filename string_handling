@@ -1,0 +1,35 @@
+# The first part of the program reads in a string and makes
+# each alternate character an UPPERCASE character and each other
+# alternate character a lowercase character (e.g, the string “Hello World”
+# would become “HeLlO WoRlD”).
+
+# Input fro user
+text = input('Please enter the text: ')
+new_text = ''
+
+# Use for loop, upper() and lower() method to covnvert a string.
+
+for i in range(len(text)):
+    if i % 2 == 0:  # if index of letter in string is even then convert letter to upper
+        new_text += text[i].upper()
+    else:  # if index of letter in string is odd then convert letter to lower
+        new_text += text[i].lower()
+print(new_text)
+
+# The second part of the program is starting with the same string but making each alternative word
+# lower and upper case (e.g. the string: “I am learning to code” would
+# become “i AM learning TO code”).
+
+split_text = text.split()  # Convert string to a list.
+final_text = []
+
+# Use for loop, upper(), lower() and append() method to covnvert a list.
+
+for i, w in enumerate(split_text):
+    if i % 2 == 0:  # if index of word is even then convert letters in this word to lower
+        final_text.append(w.lower())
+    else:  # if index of word is odd then convert letters in this word to upper
+        final_text.append(w.upper())
+
+final_sent = ' '.join(final_text)  # Convert the list to the string.
+print(final_sent)
